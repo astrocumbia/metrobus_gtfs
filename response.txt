@@ -1,0 +1,13 @@
+#<Transit_realtime::FeedEntity 
+  id=\"1\"
+  is_deleted=false 
+  trip_update=nil 
+  vehicle=#<Transit_realtime::VehiclePosition 
+    trip=#<Transit_realtime::TripDescriptor 
+      trip_id=\"7939246\" 
+      start_time=\"23:44:00\" 
+      start_date=\"20190924\" 
+      schedule_relationship=#<Protobuf::Enum(Transit_realtime::TripDescriptor::ScheduleRelationship)::SCHEDULED=0> 
+        route_id=\"367\"
+        direction_id=0>
+      position=#<Transit_realtime::Position latitude=19.315200805664062 longitude=-99.1875 bearing=88.0 odometer=0.0 speed=7.5> current_stop_sequence=9 current_status=#<Protobuf::Enum(Transit_realtime::VehiclePosition::VehicleStopStatus)::STOPPED_AT=1> timestamp=1569369333 congestion_level=#<Protobuf::Enum(Transit_realtime::VehiclePosition::CongestionLevel)::UNKNOWN_CONGESTION_LEVEL=0> stop_id=\"177\" vehicle=#<Transit_realtime::VehicleDescriptor id=\"114\" label=\"56\" license_plate=\"\"> occupancy_status=#<Protobuf::Enum(Transit_realtime::VehiclePosition::OccupancyStatus)::EMPTY=0>> alert=nil>

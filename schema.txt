@@ -1,0 +1,71 @@
+{
+  "FeedEntity": {
+    "id": 1,
+    "is_deleted": false,
+
+    "vehicle": {
+      id="1243",
+      label="2378",
+      license_plate=""
+    },
+
+    "trip": {
+      trip_id="7925258"
+      start_time="20:12:00"
+      start_date="20191001"
+      route_id="301"
+      direction_id=0
+      
+      current_stop_sequence=31
+      current_status=#<Protobuf::Enum(Transit_realtime::VehiclePosition::VehicleStopStatus)::IN_TRANSIT_TO=2>
+
+      stop_id="206"
+    }
+
+    "position": {
+      "latitude": 19.391300201416016,
+      "longitude":-99.04720306396484,
+      "bearing": 0.0,
+      "odometer": 460.0,
+      "speed": 0.0
+    }
+  }
+}
+
+#<Transit_realtime::FeedEntity
+  id="1"
+  is_deleted=false
+  trip_update=nil (ALWAYS IS NULL)
+  
+  vehicle=#<Transit_realtime::VehiclePosition
+    trip=#<Transit_realtime::TripDescriptor
+      trip_id="7925258"
+      start_time="20:12:00"
+      start_date="20191001"
+      route_id="301"
+      direction_id=0
+    >
+    
+    position=#<Transit_realtime::Position
+      latitude=19.391300201416016
+      longitude=-99.04720306396484
+      bearing=0.0
+      odometer=460.0
+      speed=0.0
+    >
+    
+    current_stop_sequence=31
+    current_status=#<Protobuf::Enum(Transit_realtime::VehiclePosition::VehicleStopStatus)::IN_TRANSIT_TO=2>
+    timestamp=1569967421
+    (ALWAYS UNKNOWN) congestion_level=#<Protobuf::Enum(Transit_realtime::VehiclePosition::CongestionLevel)::UNKNOWN_CONGESTION_LEVEL=0>
+    
+    stop_id="206"
+    
+    vehicle=#<Transit_realtime::VehicleDescriptor
+      id="1243"
+      label="2378"
+      license_plate=""
+    > 
+    
+    (ALWAYS EMPTY) occupancy_status=#<Protobuf::Enum(Transit_realtime::VehiclePosition::OccupancyStatus)::EMPTY=0>
+  >

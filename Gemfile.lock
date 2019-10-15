@@ -7,6 +7,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
+    bson (4.5.0)
     chronic (0.10.2)
     concurrent-ruby (1.1.5)
     gtfs-realtime-bindings (0.0.5)
@@ -15,6 +16,8 @@ GEM
       concurrent-ruby (~> 1.0)
     middleware (0.1.0)
     minitest (5.12.0)
+    mongo (2.10.2)
+      bson (>= 4.4.2, < 5.0.0)
     protobuf (3.10.1)
       activesupport (>= 3.2)
       middleware
@@ -34,8 +37,9 @@ PLATFORMS
 
 DEPENDENCIES
   gtfs-realtime-bindings
+  mongo
   rake
   whenever
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

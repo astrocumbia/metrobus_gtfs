@@ -8,6 +8,10 @@ class Schedule
         @vehicle = Vehicle.new(entity.vehicle)
     end
 
+    def vehicle
+        @vehicle
+    end
+
     def hash
         {
             id: @id,

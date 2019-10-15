@@ -1,27 +1,20 @@
-require 'protobuf'
-require 'google/transit/gtfs-realtime.pb'
-require 'net/http'
-require 'uri'
-
 require './src/models/schedule'
 require './src/storage/firestore'
 require './src/storage/mongo'
+require './src/service/metrobus_gtfs'
 
-data = Net::HTTP.get(URI.parse("http://app.citi-mb.mx/GTFS-RT/vehiculosPosicion"))
-feed = Transit_realtime::FeedMessage.decode(data)
+ms = MetrobusGTFS.new
+schedules = ms.feed.entity.map { |f| Schedule.new f }
 
-#  for entity in feed.entity do
-#    p entity
-#  end
+firestore = Firestore.new
+mongo = Mongodb.new
 
-# p feed.entity[0].vehicle.position
-p feed.entity.count
 
-schedule = Schedule.new(feed.entity[0])
+mongo.saveArray schedules
 
-# f = Firestore.new
-# f.save(schedule)
+for schedule in schedules do
+  firestore.save schedule
+end
 
-m = Mongodb.new
-m.save schedule
+puts schedules.count
 

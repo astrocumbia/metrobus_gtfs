@@ -1,9 +1,10 @@
+require 'dotenv/load'
 require "google/cloud/firestore"
 
 class Firestore
     def initialize
-        @project_id = 'metrobus-dev'
-        @key_file = '/Users/positr0nix/Repos/ruby/metrobus_gtfs/key/metrobus-dev-firebase-adminsdk-qq3u0-b97e5efe14.json'
+        @project_id = ENV['FIREBASE_PROJECT_ID']
+        @key_file = ENV['FIREBASE_KEY_FILE']
 
         @firestore = Google::Cloud::Firestore.new project_id: @project_id, keyfile: @key_file 
     end

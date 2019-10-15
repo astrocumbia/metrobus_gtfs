@@ -1,9 +1,10 @@
+require 'dotenv/load'
 require 'mongo'
 
 class Mongodb
     def initialize
-        @host = '127.0.0.1:27017'
-        @db_name = 'metrobus_dev'
+        @host = ENV['MONGO_HOST']
+        @db_name = ENV['MONGO_DB_NAME']
 
         @client = Mongo::Client.new("mongodb://#{@host}/#{@db_name}")
         @collection = @client[:schedules]

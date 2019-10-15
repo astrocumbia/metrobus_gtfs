@@ -15,6 +15,10 @@ class Vehicle
         @position = Position.new(vehiclePF.position)
     end
 
+    def id
+        @id
+    end
+
     def hash
         {
             id: @id,

@@ -6,6 +6,7 @@ require 'uri'
 require 'mongo'
 
 require './src/models/schedule'
+require './src/storage/firestore'
 
 data = Net::HTTP.get(URI.parse("http://app.citi-mb.mx/GTFS-RT/vehiculosPosicion"))
 feed = Transit_realtime::FeedMessage.decode(data)
@@ -19,11 +20,12 @@ p feed.entity.count
 
 schedule = Schedule.new(feed.entity[0])
 
-p schedule.hash
+f = Firestore.new
+f.save(schedule)
 
-client = Mongo::Client.new('mongodb://127.0.0.1:27017/metrobus_dev')
-db = client.database
+# client = Mongo::Client.new('mongodb://127.0.0.1:27017/metrobus_dev')
+# db = client.database
 
-collection = client[:schedules]
+# collection = client[:schedules]
 
-collection.insert_one(schedule.hash)
+# collection.insert_one(schedule.hash)

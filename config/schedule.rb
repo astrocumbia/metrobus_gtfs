@@ -22,6 +22,6 @@ env :PATH, ENV['PATH']
 
 set :output, "/Users/positr0nix/repos/metrobus/metrobus_gtfs/log/cron.log"
 
-every 1.minute do
-  rake 'hello'
+every 5.minute do
+  rake 'download_data'
 end

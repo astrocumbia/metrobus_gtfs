@@ -4,19 +4,17 @@ require './src/storage/mongo'
 require './src/service/metrobus_gtfs'
 
 ms = MetrobusGTFS.new
-feed = ms.feed
+schedules = ms.feed.entity.map { |f| Schedule.new f }
 
-#  for entity in feed.entity do
-#    p entity
-#  end
+firestore = Firestore.new
+mongo = Mongodb.new
 
-p feed.entity.count
 
-# schedule = Schedule.new(feed.entity[0])
+mongo.saveArray schedules
 
-# f = Firestore.new
-# f.save(schedule)
+for schedule in schedules do
+  firestore.save schedule
+end
 
-# m = Mongodb.new
-# m.save schedule
+puts schedules.count
 

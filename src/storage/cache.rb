@@ -7,9 +7,9 @@ class Cache
 
     def require_update?(schedule)
         value = @redis.get(schedule.key)
-        timestamp = schedule.vehicle.timestamp
+        coordinates = schedule.vehicle.position.to_s
 
-        if value == nil || value == "" || value == timestamp
+        if value == nil || value == "" || value == coordinates
             return true
         end
 
@@ -17,8 +17,8 @@ class Cache
     end
 
     def update(schedule)
-        timestamp = schedule.vehicle.timestamp
-        @redis.set(schedule.key, timestamp)
+        coordinates = schedule.vehicle.position.to_s
+        @redis.set(schedule.key, coordinates)
     end
 
     def update_array(schedules) 

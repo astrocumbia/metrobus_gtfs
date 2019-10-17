@@ -8,6 +8,10 @@ class Position
         @speed = positionPF.speed
     end
 
+    def to_s
+        "#{@latitude},#{@longitude}"
+    end
+
     def hash
         {
             latitude: @latitude,

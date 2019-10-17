@@ -23,6 +23,10 @@ class Vehicle
         @timestamp
     end
 
+    def position
+        @position
+    end
+
     def hash
         {
             id: @id,

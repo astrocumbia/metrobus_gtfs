@@ -16,7 +16,6 @@ firestore = Firestore.new
 mongo = Mongodb.new
 cache = Cache.new
 
-# preguntar por elementos con cambios
 schedules_to_update = schedules.select{ |s| cache.require_update?(s) }
 puts "#{schedules_to_update.count} schedules require update"
 

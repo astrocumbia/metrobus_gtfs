@@ -8,6 +8,10 @@ class Schedule
         @vehicle = Vehicle.new(entity.vehicle)
     end
 
+    def key
+        return "schedule-#{@id}"
+    end
+
     def vehicle
         @vehicle
     end

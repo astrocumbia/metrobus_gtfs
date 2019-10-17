@@ -14,7 +14,7 @@ class Mongodb
         @collection.insert_one schedule.hash        
     end
 
-    def saveArray(schedules)
+    def save_array(schedules)
         arr = schedules.map { |s| s.hash }
         @collection.insert_many(arr)
     end
